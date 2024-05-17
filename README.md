@@ -1,3 +1,5 @@
+<a href="https://discord.gg/jDAGR26yXe"><img src="https://img.shields.io/discord/1068818982485901432?color=5865F2&logo=discord&logoColor=white" alt="Discord server" /></a>
+
 # BlueCloud
 A simple, modular and leightweight [Minecraft](https://minecraft.net) cloud system.
 
