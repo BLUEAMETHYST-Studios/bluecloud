@@ -5,7 +5,7 @@ jobs:
     if: "!contains(github.event.commits[0].message, '[skip ci]')"
     strategy:
       matrix:
-        java: [17-jdk]
+        java: [21-jdk]
     runs-on: ubuntu-24.04
     container:
       image: openjdk:${{ matrix.java }}
