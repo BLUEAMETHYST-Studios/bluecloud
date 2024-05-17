@@ -11,19 +11,20 @@ Our goals is **not** to create a production-ready cloud system. We want to learn
 If you are searching for a production-ready cloud system, you should take a look at [nextCluster](https://github.com/nextCluster/nextCluster).
 
 ## Features
-| Feature       | Description                                                  | Status |
-|---------------|--------------------------------------------------------------|--------|
-| **Runner**    | The module that handles process creation.                    | 🚧     |
-| **API**       | A api for developers using dependency injection.             | 🚧     |
-| **Wrapper**   | The wrapper between the node and the runner.                 | 🚧     |
-| **Node**      | The main part of the cloud system.                           | ❌      |
-| **Templates** | A template system for services.                              | ❌      |
-| **Sync**      | A synchronisation service for the cloud system. (e.g. Netty) | ❌      |
-| **CLI**       | A command line interface for the cloud system.               | ❌      |
-| **Website**   | A website for this project.                                  | ❌      |
-| **Dashboard** | A web interface for managing the cloud.                      | ❌      |
-| **Modules**   | A module system for the cloud system                         | ❌      |
-| **Docker**    | A Dockerfile for the cloud system.                           | ❌      |
+| Feature        | Description                                                  | Status |
+|----------------|--------------------------------------------------------------|--------|
+| **Runner**     | The module that handles process creation.                    | 🚧     |
+| **API**        | A api for developers using dependency injection.             | 🚧     |
+| **Wrapper**    | The wrapper between the node and the runner.                 | 🚧     |
+| **Node**       | The main part of the cloud system.                           | ❌      |
+| **Templates**  | A template system for services.                              | ❌      |
+| **Sync**       | A synchronisation service for the cloud system. (e.g. Netty) | ❌      |
+| **CLI**        | A command line interface for the cloud system.               | ❌      |
+| **Website**    | A website for this project.                                  | ❌      |
+| **Dashboard**  | A web interface for managing the cloud.                      | ❌      |
+| **Modules**    | A module system for the cloud system                         | ❌      |
+| **Docker**     | A Dockerfile for the cloud system.                           | ❌      |
+| **Kubernetes** | A Kubernetes deployment file for the cloud system.           | ❌      |
 
 ### Modules
 | Module             | Description                                                                    | Status |
@@ -35,13 +36,13 @@ If you are searching for a production-ready cloud system, you should take a look
 | **Ingame-Notify**  | A ingame notification system (e.g. when a cloud service starts).               | ❌      |
 | **Webhook-Notify** | A webhook for notifications (e.g. when a cloud service starts).                | ❌      |
 
-
 ### Platforms
 | Platform                                             | Description                                   | Status |
 |------------------------------------------------------|-----------------------------------------------|--------|
 | **[Velocity](https://papermc.io/software/velocity)** | A modern Minecraft Proxy solution.            | 🚧     |
 | **[PaperMC](https://papermc.io/software/paper)**     | A modern [Spigot](https://spigotmc.org) Fork. | 🚧     |
 | **[FabricMC](https://fabricmc.net/)**                | A modern modded Minecraft Server solution.    | ❌      |
+Bedrock platforms are planned for the future.
 
 ## Installation
 Currently, you have to compile it yourself.
