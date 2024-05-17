@@ -36,9 +36,9 @@ If you are searching for a production-ready cloud system, you should take a look
 ### Platforms
 | Platform                                             | Description                                   | Status |
 |------------------------------------------------------|-----------------------------------------------|--------|
-| **[Velocity](https://papermc.io/software/velocity)** | A modern Minecraft Proxy solution.            |        |
-| **[PaperMC](https://papermc.io/software/paper)**     | A modern [Spigot](https://spigotmc.org) Fork. |        |
-| **[FabricMC](https://fabricmc.net/)**                | A modern modded Minecraft Server solution.    |        |
+| **[Velocity](https://papermc.io/software/velocity)** | A modern Minecraft Proxy solution.            | ❌      |
+| **[PaperMC](https://papermc.io/software/paper)**     | A modern [Spigot](https://spigotmc.org) Fork. | ❌      |
+| **[FabricMC](https://fabricmc.net/)**                | A modern modded Minecraft Server solution.    | ❌      |
 
 ## Installation
 Currently, you have to compile it yourself.
