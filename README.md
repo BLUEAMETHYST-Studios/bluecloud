@@ -37,12 +37,14 @@ If you are searching for a production-ready cloud system, you should take a look
 | **Webhook-Notify** | A webhook for notifications (e.g. when a cloud service starts).                | ❌      |
 
 ### Platforms
+> [!NOTE]  
+> Bedrock platforms are planned for the future.
+> 
 | Platform                                             | Description                                   | Status |
 |------------------------------------------------------|-----------------------------------------------|--------|
 | **[Velocity](https://papermc.io/software/velocity)** | A modern Minecraft Proxy solution.            | 🚧     |
 | **[PaperMC](https://papermc.io/software/paper)**     | A modern [Spigot](https://spigotmc.org) Fork. | 🚧     |
 | **[FabricMC](https://fabricmc.net/)**                | A modern modded Minecraft Server solution.    | ❌      |
-Bedrock platforms are planned for the future.
 
 ## Installation
 Currently, you have to compile it yourself.
@@ -54,6 +56,9 @@ gradlew build
 ```
 
 ## Dependencies
+> [!IMPORTANT]  
+> Since this cloud system is not production-ready, we do not provide any dependencies. If you still want to use it you can push it to your MavenLocal.
+
 <details>
   <summary>Maven</summary>
   
