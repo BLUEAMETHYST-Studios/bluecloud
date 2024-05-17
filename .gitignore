@@ -24,3 +24,6 @@ gradle-app.setting
 .idea/
 # Ignore Gradle build output directory
 build
+
+### Other ###
+run/
