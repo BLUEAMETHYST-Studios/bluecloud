@@ -2,7 +2,7 @@
 kotlinxCoroutinesCore = "1.8.1"
 guice = "7.0.0"
 ktor = "2.3.11"
-kotlinx-serialization = "1.6.0"
+kotlinx-serialization = "1.6.3"
 
 [libraries]
 kotlinxCoroutinesCore = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCore" }
