@@ -10,7 +10,9 @@ repositories {
 }
 
 dependencies {
+    implementation(project(":api"))
     implementation(libs.kotlinxCoroutinesCore)
+    implementation(libs.guice)
 }
 
 kotlin {
