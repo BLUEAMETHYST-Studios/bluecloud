@@ -11,7 +11,9 @@ repositories {
 }
 
 dependencies {
+    implementation(project(":api"))
     implementation(libs.bundles.ktorClient)
+    implementation(libs.guice)
     implementation(kotlin("reflect"))
 }
 
