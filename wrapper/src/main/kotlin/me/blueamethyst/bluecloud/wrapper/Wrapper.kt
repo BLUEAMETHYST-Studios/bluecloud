@@ -5,6 +5,7 @@ import me.blueamethyst.bluecloud.common.internal.types.InternalSystemPartType
 import me.blueamethyst.bluecloud.wrapper.models.WrapperConfigModel
 
 class Wrapper: AbstractSystemPart(InternalSystemPartType.WRAPPER) {
+    val processManager = ProcessManager()
 
     override fun startup() {
         setupFileStructure()
