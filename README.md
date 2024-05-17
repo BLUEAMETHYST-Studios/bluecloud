@@ -11,7 +11,7 @@ If you are searching for a production-ready cloud system, you should take a look
 ## Features
 | Feature       | Description                                                  | Status |
 |---------------|--------------------------------------------------------------|--------|
-| **Runner**    | The module that handles process creation.                    | ❌      |
+| **Runner**    | The module that handles process creation.                    | 🚧     |
 | **API**       | A api for developers using dependency injection.             | ❌      |
 | **Node**      | The main part of the cloud system.                           | ❌      |
 | **Templates** | A template system for services.                              | ❌      |
