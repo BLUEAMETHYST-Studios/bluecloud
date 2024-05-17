@@ -50,7 +50,7 @@ gradlew build
 ```
 
 ## Dependencies
-<details open>
+<details>
   <summary>Maven</summary>
   
 ```xml
