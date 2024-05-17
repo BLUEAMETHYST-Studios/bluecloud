@@ -1,0 +1,7 @@
+[versions]
+kotlinxCoroutinesCore = "1.8.1"
+guice = "7.0.0"
+
+[libraries]
+kotlinxCoroutinesCore = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCore" }
+guice = { group = "com.google.inject", name = "guice", version.ref = "guice" }

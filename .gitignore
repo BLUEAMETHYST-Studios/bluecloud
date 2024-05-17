@@ -22,3 +22,5 @@ gradle-app.setting
 
 # JetBrains IntelliJ
 .idea/
+# Ignore Gradle build output directory
+build
