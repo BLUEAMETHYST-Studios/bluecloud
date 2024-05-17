@@ -6,3 +6,4 @@ rootProject.name = "bluecloud"
 
 include("runner")
 include("api")
+include("common")
