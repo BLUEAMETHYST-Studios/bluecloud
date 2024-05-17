@@ -5,7 +5,7 @@ A simple, modular and leightweight [Minecraft](https://minecraft.net) cloud syst
 > Do not use the cloud yet, it's still work in progress.
 
 ## Goals
-Our goals is not to create a production-ready cloud system. We want to learn more about backend development.
+Our goals is **not** to create a production-ready cloud system. We want to learn more about backend development.
 If you are searching for a production-ready cloud system, you should take a look at [nextCluster](https://github.com/nextCluster/nextCluster).
 
 ## Features
