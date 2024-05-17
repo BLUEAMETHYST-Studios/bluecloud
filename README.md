@@ -63,7 +63,14 @@ gradlew build
   <summary>Maven</summary>
   
 ```xml
-<!-- Work in progress -->
+<dependencies>
+    <dependency>
+        <groupId>me.blueamethyst.bluecloud</groupId>
+        <artifactId>api</artifactId>
+        <version>${VERSION}"</version>
+        <scope>provided</scope>
+    </dependency>
+</dependencies>
 ```
 </details>
 
@@ -71,7 +78,9 @@ gradlew build
   <summary>Gradle</summary>
   
 ```groovy
-// Work in progress
+dependencies {
+    compileOnly 'me.blueamethyst.bluecloud:api:${VERSION}'
+}
 ```
 </details>
 
@@ -79,6 +88,8 @@ gradlew build
   <summary>Gradle (KTS)</summary>
 
 ```kotlin
-// Work in progress
+dependencies {
+    compileOnly("me.blueamethyst.bluecloud:api:${VERSION}")
+}
 ```
 </details>
