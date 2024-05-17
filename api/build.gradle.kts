@@ -1,8 +1,10 @@
 plugins {
     kotlin("jvm") version "1.9.24"
+    `maven-publish`
 }
 
 group = "me.blueamethyst.bluecloud"
+version = "1.0.0"
 
 repositories {
     mavenCentral()
@@ -14,4 +16,12 @@ dependencies {
 
 kotlin {
     jvmToolchain(21)
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("api") {
+            from(components["java"])
+        }
+    }
 }

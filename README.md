@@ -57,7 +57,7 @@ gradlew build
 
 ## Dependencies
 > [!IMPORTANT]  
-> Since this cloud system is not production-ready, we do not provide any dependencies. If you still want to use it you can push it to your MavenLocal.
+> Since this cloud system is not production-ready, we do not provide any dependencies. If you still want to use it you can push it to your MavenLocal by using `gradlew :api:publishToMavenLocal`.
 
 <details>
   <summary>Maven</summary>
