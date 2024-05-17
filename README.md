@@ -1,9 +1,10 @@
+# BlueCloud
 <p style="text-align: center;">
     <img src="https://img.shields.io/badge/Version-0.1-blue.svg" alt="Version">
     <a href="https://discord.gg/jDAGR26yXe"><img src="https://img.shields.io/discord/1068818982485901432?color=5865F2&logo=discord&logoColor=white" alt="Discord server" /></a>
+    <img src="https://img.shields.io/badge/License-GPLv3-blue.svg", alt="License: GPL v3">
 </p>
 
-# BlueCloud
 A simple, modular and leightweight [Minecraft](https://minecraft.net) cloud system desgined for being high-available, easy to use and easy to extend.
 
 > [!WARNING]
