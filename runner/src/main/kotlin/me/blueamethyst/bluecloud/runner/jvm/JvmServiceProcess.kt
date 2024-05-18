@@ -19,13 +19,11 @@ class JvmServiceProcess: AbstractServiceProcess() {
         processArguments: String
     ) {
         startCommand = "$javaCommand $jvmArguments -jar $startFileName $processArguments"
-        prepareService(service)
         createProcess()
     }
 
     override fun start(service: ICloudService, command: String) {
         startCommand = command
-        prepareService(service)
         createProcess()
     }
 
@@ -40,12 +38,6 @@ class JvmServiceProcess: AbstractServiceProcess() {
     private fun createProcess() {
         process = ProcessBuilder(startCommand)
             .start()
-    }
-
-    private fun prepareService(service: ICloudService) {
-        directory = File("temp/${service.getId()}")
-        if (!directory.exists()) directory.mkdirs()
-        // TODO: prepare templates
     }
 
     fun getServiceDisplay(): ServiceDisplay {
