@@ -1,5 +1,7 @@
 package me.blueamethyst.bluecloud.wrapper.logic
 
+import me.blueamethyst.bluecloud.wrapper.logic.WrapperQueue as Queue
+import me.blueamethyst.bluecloud.wrapper.logic.WrapperServiceProcessor as ServiceProcessor
 import me.blueamethyst.bluecloud.wrapper.Wrapper.Companion.logger
 import java.io.Closeable
 
@@ -18,7 +20,11 @@ class WrapperWatcher: Thread("wrapper-watcher"), Closeable {
 
     private fun spin() {
         while (running) {
-            //TODO: check if service is in the queue
+            if (Queue.instance.queue.isNotEmpty()) {
+                val service = Queue.instance.queue.first()
+                ServiceProcessor.instance.startService(service)
+                Queue.instance.queue.remove(service) // TODO: implement simultaneousServiceStartCount
+            }
             sleep(1000)
         }
     }
