@@ -27,8 +27,8 @@ If you are searching for a production-ready cloud system, you should take a look
 | **Website**    | A website for this project.                                  | ❌      |
 | **Dashboard**  | A web interface for managing the cloud.                      | ❌      |
 | **Modules**    | A module system for the cloud system                         | ❌      |
-| **Docker**     | A Dockerfile for the cloud system.                           | ❌      |
-| **Kubernetes** | A Kubernetes deployment file for the cloud system.           | ❌      |
+| **Docker**     | A Docker wrapper for cloud services.                         | ❌      |
+| **Kubernetes** | A Kubernetes wrapper for cloud services.                     | ❌      |
 
 ### Modules
 | Module             | Description                                                                    | Status |
