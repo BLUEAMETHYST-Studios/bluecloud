@@ -1,6 +1,7 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/BLUEAMETHYST-Studios/bluecloud/main/.img/logo.jpeg", height=256, width=256 />
 </p>
+
 *Logo by [Bing AI](https://chat.bing.com/)*
 
 # BlueCloud
