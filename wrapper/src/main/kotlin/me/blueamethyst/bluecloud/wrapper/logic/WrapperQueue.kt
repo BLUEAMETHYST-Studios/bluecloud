@@ -5,10 +5,6 @@ import me.blueamethyst.bluecloud.api.service.ICloudService
 class WrapperQueue {
     internal val queue = arrayListOf<ICloudService>()
 
-    companion object {
-        val instance = WrapperQueue()
-    }
-
     fun getQueue(): ArrayList<ICloudService> {
         return queue
     }
@@ -24,4 +20,8 @@ class WrapperQueue {
     fun clearQueue() {
         queue.clear()
     }
+
+    companion object {
+        val instance = WrapperQueue()
+    } 
 }

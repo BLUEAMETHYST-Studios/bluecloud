@@ -21,4 +21,8 @@ class WrapperServiceProcessor {
         startService(service)
         WrapperQueue.instance.queue.remove(service)
     }
+
+    companion object {
+        val instance = WrapperServiceProcessor()
+    }
 }
