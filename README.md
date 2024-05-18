@@ -4,7 +4,7 @@
 
 *Logo by [Bing AI](https://chat.bing.com/)*
 
-# BlueCloud
+# 🔮 BlueCloud
 <p align="center">
     <a href="https://github.com/BLUEAMETHYST-Studios/bluecloud/blob/161732351be9c373a92beb91884eae8561e2de31/build.gradle.kts#L2"><img src="https://img.shields.io/badge/Version-0.1-blue.svg" alt="Version"></a>
     <a href="https://discord.gg/jDAGR26yXe"><img src="https://img.shields.io/discord/1068818982485901432?color=5865F2&logo=discord&logoColor=white" alt="Discord server" /></a>
@@ -16,7 +16,7 @@ A simple, modular and leightweight [Minecraft](https://minecraft.net) cloud syst
 > [!WARNING]
 > Do not use the cloud yet, it's still work in progress.
 
-## Goals
+## 🎯 Goals
 Our goals is **not** to create a production-ready cloud system. We want to learn more about backend development.
 If you are searching for a production-ready cloud system, you should take a look at [nextCluster](https://github.com/nextCluster/nextCluster).
 
@@ -36,7 +36,7 @@ If you are searching for a production-ready cloud system, you should take a look
 | **Docker**     | A Docker wrapper for cloud services.                         | ❌      |
 | **Kubernetes** | A Kubernetes wrapper for cloud services.                     | ❌      |
 
-### Modules
+### 📦 Modules
 | Module             | Description                                                                    | Status |
 |--------------------|--------------------------------------------------------------------------------|--------|
 | **Rest-API**       | A rest api for the cloud system.                                               | ❌      |
@@ -46,7 +46,7 @@ If you are searching for a production-ready cloud system, you should take a look
 | **Ingame-Notify**  | A ingame notification system (e.g. when a cloud service starts).               | ❌      |
 | **Webhook-Notify** | A webhook for notifications (e.g. when a cloud service starts).                | ❌      |
 
-### Platforms
+### 📱 Platforms
 > [!NOTE]  
 > Bedrock platforms are planned for the future.
 > 
@@ -56,7 +56,7 @@ If you are searching for a production-ready cloud system, you should take a look
 | **[PaperMC](https://papermc.io/software/paper)**     | A modern [Spigot](https://spigotmc.org) Fork. | 🚧     |
 | **[FabricMC](https://fabricmc.net/)**                | A modern modded Minecraft Server solution.    | ❌      |
 
-## Installation
+## ⬇️ Installation
 Currently, you have to compile it yourself.
 
 ```shell
@@ -65,7 +65,7 @@ cd bluecloud
 gradlew build
 ```
 
-## Develop with BlueCloud
+## 😎 Develop with BlueCloud
 | Module      | Description                                         | available on     |
 |-------------|-----------------------------------------------------|------------------|
 | **API**     | The API for developers using dependency injection.  | Modules, Plugins |
@@ -74,7 +74,7 @@ gradlew build
 | **Wrapper** | Could be used to modify the Wrapper logic.          | Modules          |
 | **Common**  | Contains useful utilities. - **unsafe to use!**     | Modules          |
 
-### Dependencies
+### 🚧 Dependencies
 > [!IMPORTANT]  
 > Since this cloud system is not production-ready, we do not provide any dependencies. If you still want to use it you can push it to your MavenLocal by using `gradlew :api:publishToMavenLocal`.
 
