@@ -13,6 +13,7 @@ dependencies {
     implementation(project(":api"))
     implementation(libs.bundles.ktorClient)
     implementation(libs.guice)
+    implementation(libs.clikt)
     implementation(kotlin("reflect"))
 }
 

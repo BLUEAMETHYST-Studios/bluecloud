@@ -7,6 +7,11 @@ class Logger(private val prefix: String, private val logWithTime: Boolean = fals
 
     var printConsoleAfter: Boolean = false
 
+    @Suppress("MemberVisibilityCanBePrivate")
+    fun println(message: Any) {
+        kotlin.io.println(message)
+    }
+
     fun log(message: Any, subPrefix: String = "") {
         if (subPrefix != "")
             println("\r${preparePrefix()} $subPrefix - $message")
