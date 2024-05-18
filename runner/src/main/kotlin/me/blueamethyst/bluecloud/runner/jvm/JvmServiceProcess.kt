@@ -11,6 +11,7 @@ class JvmServiceProcess: AbstractServiceProcess() {
     lateinit var directory: File; private set
     lateinit var startCommand: String; private set
 
+    /*
     override fun start(
         service: ICloudService,
         javaCommand: String,
@@ -21,6 +22,7 @@ class JvmServiceProcess: AbstractServiceProcess() {
         startCommand = "$javaCommand $jvmArguments -jar $startFileName $processArguments"
         createProcess()
     }
+     */
 
     override fun start(service: ICloudService, command: String) {
         startCommand = command

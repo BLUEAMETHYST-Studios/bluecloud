@@ -15,6 +15,7 @@ dependencies {
     implementation(project(":runner"))
     implementation(libs.kotlinxSerializationJson)
     implementation(libs.guice)
+    implementation(kotlin("reflect"))
 }
 
 tasks.test {
