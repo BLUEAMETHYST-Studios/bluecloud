@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/BLUEAMETHYST-Studios/bluecloud/master/.img/logo.jpeg", height=256, width=256 />
+</p>
+*Logo by [Bing AI](https://chat.bing.com/)*
+
 # BlueCloud
 <p align="center">
     <a href="https://github.com/BLUEAMETHYST-Studios/bluecloud/blob/161732351be9c373a92beb91884eae8561e2de31/build.gradle.kts#L2"><img src="https://img.shields.io/badge/Version-0.1-blue.svg" alt="Version"></a>
