@@ -46,7 +46,10 @@ class Wrapper: AbstractSystemPart(InternalSystemPartType.WRAPPER) {
 
     private fun postStart() {
         logger.info("Starting Wrapper...")
-        WrapperWatcher.instance.start()
+        WrapperWatcher.instance.initialize()
+        while (true) {
+            Thread.sleep(50000)
+        }
     }
 
     private fun setupFileStructure() {
