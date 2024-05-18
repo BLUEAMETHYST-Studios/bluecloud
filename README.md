@@ -59,7 +59,16 @@ cd bluecloud
 gradlew build
 ```
 
-## Dependencies
+## Develop with BlueCloud
+| Module      | Description                                         | available on     |
+|-------------|-----------------------------------------------------|------------------|
+| **API**     | The API for developers using dependency injection.  | Modules, Plugins |
+| **Node**    | Could be used for modules.                          | Modules          |
+| **Runner**  | Could be used to implement new ServiceProcessTypes. | Modules          |
+| **Wrapper** | Could be used to modify the Wrapper logic.          | Modules          |
+| **Common**  | Contains useful utilities. - **unsafe to use!**     | Modules          |
+
+### Dependencies
 > [!IMPORTANT]  
 > Since this cloud system is not production-ready, we do not provide any dependencies. If you still want to use it you can push it to your MavenLocal by using `gradlew :api:publishToMavenLocal`.
 
