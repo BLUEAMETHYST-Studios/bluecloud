@@ -42,7 +42,8 @@ class Wrapper: AbstractSystemPart(InternalSystemPartType.WRAPPER) {
                     name = "wrapper.json",
                     content = WrapperConfigModel(
                         maxMemory = 1024, // TODO: Prompt user for this value
-                        serviceProcessType = "jvm"
+                        serviceProcessType = "jvm",
+                        simultaneousServiceStartCount = 2
                     )
                 )
             }
