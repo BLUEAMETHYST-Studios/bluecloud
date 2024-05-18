@@ -47,9 +47,7 @@ class Wrapper: AbstractSystemPart(InternalSystemPartType.WRAPPER) {
     private fun postStart() {
         logger.info("Starting Wrapper...")
         WrapperWatcher.instance.initialize()
-        while (true) {
-            Thread.sleep(50000)
-        }
+        blockMainThread()
     }
 
     private fun setupFileStructure() {
@@ -81,5 +79,11 @@ class Wrapper: AbstractSystemPart(InternalSystemPartType.WRAPPER) {
             ?: throw IllegalStateException("Service process type '${config.serviceProcessType}' is not registered")
 
         processType = serviceProcess
+    }
+
+    private fun blockMainThread() {
+        while (true) {
+            Thread.sleep(50000)
+        }
     }
 }

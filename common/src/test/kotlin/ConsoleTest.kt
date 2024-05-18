@@ -6,7 +6,7 @@ import java.net.InetAddress
 fun main() {
     val terminal = Terminal(
         Logger("Terminal", true),
-        "${ConsoleColors.YELLOW_BRIGHT}${System.getProperty("user.name")}${ConsoleColors.BLACK_BRIGHT}@${ConsoleColors.BLUE_BRIGHT}${InetAddress.getLocalHost().hostName} ${ConsoleColors.BLACK_BRIGHT}» ${ConsoleColors.RESET}",
+        "${ConsoleColors.YELLOW_BRIGHT}CLI${ConsoleColors.BLACK_BRIGHT}@${ConsoleColors.BLUE_BRIGHT}BlueCloud ${ConsoleColors.BLACK_BRIGHT}» ${ConsoleColors.RESET}",
         listOf()
     )
 
