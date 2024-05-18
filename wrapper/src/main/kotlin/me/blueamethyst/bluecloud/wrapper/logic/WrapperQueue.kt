@@ -23,5 +23,5 @@ class WrapperQueue {
 
     companion object {
         val instance = WrapperQueue()
-    } 
+    }
 }
