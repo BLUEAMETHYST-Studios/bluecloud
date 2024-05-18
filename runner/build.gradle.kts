@@ -12,6 +12,7 @@ dependencies {
     implementation(project(":api"))
     implementation(libs.kotlinxCoroutinesCore)
     implementation(libs.guice)
+    implementation(kotlin("reflect"))
 }
 
 kotlin {

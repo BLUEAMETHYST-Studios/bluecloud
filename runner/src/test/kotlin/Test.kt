@@ -1,9 +1,16 @@
-import me.blueamethyst.bluecloud.runner.ServiceProcess
-import java.io.File
+import me.blueamethyst.bluecloud.api.service.ICloudService
+import me.blueamethyst.bluecloud.runner.ProcessRegistry
+import java.util.*
 
 fun main() {
-    val service = ServiceProcess(File("./"), "help")
+    val call = ProcessRegistry().getServiceProcess("jvm")!!.constructors.firstOrNull()!!.call()
 
-    service.start()
-    service.getServiceDisplay().adaptOutAndResolveIn()
+    call.start(
+        object : ICloudService {
+            override fun getId(): String {
+                return UUID.randomUUID().toString()
+            }
+        },
+        command = "java"
+    )
 }

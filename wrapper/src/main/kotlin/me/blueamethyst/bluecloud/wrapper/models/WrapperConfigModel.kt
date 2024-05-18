@@ -4,5 +4,6 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class WrapperConfigModel(
-    val maxMemory: Int
+    val maxMemory: Int,
+    val serviceProcessType: String
 )

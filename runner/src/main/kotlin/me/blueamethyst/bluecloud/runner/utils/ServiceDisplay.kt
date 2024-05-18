@@ -1,4 +1,4 @@
-package me.blueamethyst.bluecloud.runner
+package me.blueamethyst.bluecloud.runner.utils
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

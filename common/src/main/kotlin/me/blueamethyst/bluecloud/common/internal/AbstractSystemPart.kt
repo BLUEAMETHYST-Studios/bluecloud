@@ -8,7 +8,7 @@ import java.io.FileNotFoundException
 
 abstract class AbstractSystemPart(type: InternalSystemPartType) {
     lateinit var fileManager: FileManager
-    private val logger = LoggingUtils.getLogger(type.toString())
+    val logger = LoggingUtils.getLogger(type.toString())
 
     fun setupData(fileManagerBuilder: FileManager.() -> Unit) {
         logger.log("Starting data setup...")

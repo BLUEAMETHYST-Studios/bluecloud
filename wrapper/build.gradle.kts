@@ -13,7 +13,8 @@ dependencies {
     implementation(project(":api"))
     implementation(project(":common"))
     implementation(project(":runner"))
-    implementation(libs.kotlinxSerializationCore)
+    implementation(libs.kotlinxSerializationJson)
+    implementation(libs.guice)
 }
 
 tasks.test {
