@@ -1,5 +1,5 @@
 name: Compile
-on: [push, pull_request]
+on: []
 jobs:
   gradle:
     if: "!contains(github.event.commits[0].message, '[skip ci]')"
