@@ -14,7 +14,7 @@ import java.io.Closeable
 class KtorApplication: Thread("ktor-thread"), Closeable {
 
     @OptIn(InternalBlueCloudApi::class)
-    override fun start() {
+    override fun run() {
         logger.info("starting ktor server on ${Node.cluster.hostname}:${Node.cluster.port}")
         embeddedServer(
             Netty,
@@ -22,7 +22,6 @@ class KtorApplication: Thread("ktor-thread"), Closeable {
             port = Node.cluster.port,
             module = Application::module
         ).start(wait = true)
-        super.start()
     }
 
     init {
