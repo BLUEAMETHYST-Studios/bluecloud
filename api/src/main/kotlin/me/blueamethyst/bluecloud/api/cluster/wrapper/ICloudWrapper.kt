@@ -6,4 +6,5 @@ interface ICloudWrapper {
     fun getMaxMemory(): Int
     fun getUsedMemory(): Int
     fun getRunningServices(): List<ICloudService>
+    fun getStaticServiceDirectories(): List<String>
 }
