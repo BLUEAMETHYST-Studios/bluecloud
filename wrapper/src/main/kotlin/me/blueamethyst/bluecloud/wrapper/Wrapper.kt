@@ -12,6 +12,7 @@ import me.blueamethyst.bluecloud.runner.ProcessRegistry
 import me.blueamethyst.bluecloud.wrapper.logic.WrapperWatcher
 import me.blueamethyst.bluecloud.wrapper.models.WrapperConfigModel
 import me.blueamethyst.bluecloud.wrapper.utils.json
+import me.blueamethyst.bluecloud.wrapper.utils.promptIntToValid
 import java.io.File
 import kotlin.reflect.KClass
 
@@ -72,7 +73,7 @@ class Wrapper: AbstractSystemPart(InternalSystemPartType.WRAPPER) {
                 file<WrapperConfigModel>(
                     name = "wrapper.json",
                     content = WrapperConfigModel(
-                        maxMemory = 1024, // TODO: Prompt user for this value
+                        maxMemory = promptIntToValid("How much memory should the wrapper use? (MB)"), // TODO: disable prompt when file exists
                         serviceProcessType = "jvm",
                         simultaneousServiceStartCount = 2
                     )
