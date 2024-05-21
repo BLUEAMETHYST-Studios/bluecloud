@@ -7,6 +7,7 @@ group = "me.blueamethyst.bluecloud"
 
 repositories {
     mavenCentral()
+    maven("https://s01.oss.sonatype.org/content/repositories/snapshots/")
 }
 
 dependencies {
@@ -17,6 +18,7 @@ dependencies {
     implementation(libs.guice)
     implementation(libs.mordant)
     implementation(libs.mordantCoroutines)
+    implementation(libs.osganNetty)
     implementation(kotlin("reflect"))
 }
 

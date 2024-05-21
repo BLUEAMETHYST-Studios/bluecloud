@@ -6,6 +6,7 @@ ktor = "2.3.11"
 kotlinx-serialization = "1.6.3"
 clikt = "4.4.0"
 mordant = "2.6.0"
+osgan-netty = "1.1.15-SNAPSHOT"
 
 [libraries]
 kotlinxCoroutinesCore = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCore" }
@@ -20,6 +21,7 @@ ktor-serialization-kotlinx-json = { group = "io.ktor", name = "ktor-serializatio
 clikt = { group = "com.github.ajalt.clikt", name = "clikt", version.ref = "clikt" }
 mordant = { group = "com.github.ajalt.mordant", name = "mordant", version.ref = "mordant" }
 mordantCoroutines = { group = "com.github.ajalt.mordant", name = "mordant-coroutines", version.ref = "mordant" }
+osganNetty = { group = "dev.httpmarco", name = "osgan-netty", version.ref = "osgan-netty" }
 
 [bundles]
 ktorClient = ["ktor-client-core", "ktor-client-cio", "ktor-client-content-negotiation", "ktor-serialization-kotlinx-json"]
