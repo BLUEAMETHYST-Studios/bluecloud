@@ -1,6 +1,7 @@
 [versions]
 kotlinxCoroutinesCore = "1.8.1"
 guice = "7.0.0"
+gson = "2.11.0"
 ktor = "2.3.11"
 kotlinx-serialization = "1.6.3"
 clikt = "4.4.0"
@@ -11,6 +12,7 @@ kotlinxCoroutinesCore = { group = "org.jetbrains.kotlinx", name = "kotlinx-corou
 kotlinxSerializationCore = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-core", version.ref = "kotlinx-serialization" }
 kotlinxSerializationJson = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
 guice = { group = "com.google.inject", name = "guice", version.ref = "guice" }
+gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
 ktor-client-cio = { group = "io.ktor", name = "ktor-client-cio", version.ref = "ktor" }
 ktor-client-content-negotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktor" }

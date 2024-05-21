@@ -1,10 +1,10 @@
 package me.blueamethyst.bluecloud.wrapper
 
 import me.blueamethyst.bluecloud.api.annontations.InternalBlueCloudApi
-import me.blueamethyst.bluecloud.common.terminal.ConsoleColors
-import me.blueamethyst.bluecloud.common.terminal.Logger
 import me.blueamethyst.bluecloud.common.internal.AbstractSystemPart
 import me.blueamethyst.bluecloud.common.internal.types.InternalSystemPartType
+import me.blueamethyst.bluecloud.common.terminal.ConsoleColors
+import me.blueamethyst.bluecloud.common.terminal.Logger
 import me.blueamethyst.bluecloud.common.terminal.Terminal
 import me.blueamethyst.bluecloud.common.utils.LoggingUtils
 import me.blueamethyst.bluecloud.runner.AbstractServiceProcess

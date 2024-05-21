@@ -12,6 +12,7 @@ repositories {
 
 dependencies {
     implementation(libs.guice)
+    implementation(libs.gson)
 }
 
 kotlin {
