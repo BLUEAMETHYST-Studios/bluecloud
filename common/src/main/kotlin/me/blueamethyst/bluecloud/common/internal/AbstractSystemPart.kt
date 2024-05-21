@@ -1,6 +1,7 @@
 package me.blueamethyst.bluecloud.common.internal
 
 import me.blueamethyst.bluecloud.common.internal.types.InternalSystemPartType
+import me.blueamethyst.bluecloud.common.terminal.Logger
 import me.blueamethyst.bluecloud.common.utils.LoggingUtils
 import me.blueamethyst.bluecloud.common.utils.SerializationUtils.json
 import java.io.File
@@ -8,7 +9,7 @@ import java.io.FileNotFoundException
 
 abstract class AbstractSystemPart(type: InternalSystemPartType) {
     lateinit var fileManager: FileManager
-    val logger = LoggingUtils.getLogger(type.toString())
+    abstract val logger: Logger
 
     fun setupData(fileManagerBuilder: FileManager.() -> Unit) {
         logger.log("Starting data setup...")

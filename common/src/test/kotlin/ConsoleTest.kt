@@ -1,11 +1,13 @@
 import com.github.ajalt.clikt.core.CliktCommand
 import me.blueamethyst.bluecloud.common.terminal.ConsoleColors
 import me.blueamethyst.bluecloud.common.terminal.Logger
+import me.blueamethyst.bluecloud.common.terminal.Terminal
 import me.blueamethyst.bluecloud.common.terminal.cli.CLI
 
 fun main() {
+    val terminal = Terminal()
     val cli = CLI(
-        Logger("Terminal", true),
+        Logger("Terminal", true, terminal.terminal),
         "${ConsoleColors.YELLOW_BRIGHT}CLI${ConsoleColors.BLACK_BRIGHT}@${ConsoleColors.BLUE_BRIGHT}BlueCloud ${ConsoleColors.BLACK_BRIGHT}» ${ConsoleColors.RESET}",
         listOf(
             MySubcommand()

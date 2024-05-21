@@ -15,6 +15,8 @@ dependencies {
     implementation(project(":runner"))
     implementation(libs.kotlinxSerializationJson)
     implementation(libs.guice)
+    implementation(libs.mordant)
+    implementation(libs.mordantCoroutines)
     implementation(kotlin("reflect"))
 }
 

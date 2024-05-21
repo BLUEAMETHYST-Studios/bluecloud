@@ -5,6 +5,8 @@ import me.blueamethyst.bluecloud.common.terminal.ConsoleColors
 import me.blueamethyst.bluecloud.common.terminal.Logger
 import me.blueamethyst.bluecloud.common.internal.AbstractSystemPart
 import me.blueamethyst.bluecloud.common.internal.types.InternalSystemPartType
+import me.blueamethyst.bluecloud.common.terminal.Terminal
+import me.blueamethyst.bluecloud.common.utils.LoggingUtils
 import me.blueamethyst.bluecloud.runner.AbstractServiceProcess
 import me.blueamethyst.bluecloud.runner.ProcessRegistry
 import me.blueamethyst.bluecloud.wrapper.logic.WrapperWatcher
@@ -15,14 +17,19 @@ import kotlin.reflect.KClass
 
 class Wrapper: AbstractSystemPart(InternalSystemPartType.WRAPPER) {
 
+    val terminal = Terminal()
+    override val logger = LoggingUtils.getLogger("WRAPPER", terminal.terminal)
+
     companion object {
         lateinit var config: WrapperConfigModel
         lateinit var processType: KClass<out AbstractServiceProcess>
         lateinit var logger: Logger
+        lateinit var terminal: Terminal
     }
 
     @InternalBlueCloudApi
     override fun startup() {
+        Companion.terminal = terminal
         Companion.logger = logger
 
         initialize()

@@ -1,15 +1,21 @@
 package me.blueamethyst.bluecloud.common.terminal
 
+import com.github.ajalt.mordant.rendering.TextColors.*
+import com.github.ajalt.mordant.terminal.Terminal
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
-class Logger(private val prefix: String, private val logWithTime: Boolean = false) {
+class Logger(
+    private val prefix: String,
+    private val logWithTime: Boolean = false,
+    private val terminal: Terminal
+) {
 
     var printConsoleAfter: Boolean = false
 
     @Suppress("MemberVisibilityCanBePrivate")
     fun println(message: Any) {
-        kotlin.io.println(message)
+        terminal.println(message)
     }
 
     fun log(message: Any, subPrefix: String = "") {
@@ -23,22 +29,22 @@ class Logger(private val prefix: String, private val logWithTime: Boolean = fals
     }
 
     fun info(message: Any) {
-        log(message, "${ConsoleColors.CYAN}INFO")
+        log(message, cyan("INFO"))
     }
 
     fun warning(message: Any) {
-        log(message, "${ConsoleColors.YELLOW_BRIGHT}WARNING")
+        log(message, brightYellow("WARNING"))
     }
 
     fun error(message: Any) {
-        log(message, "${ConsoleColors.RED}ERROR")
+        log(message, red("ERROR"))
     }
 
     fun success(message: Any) {
-        log(message, "${ConsoleColors.GREEN}SUCCESS")
+        log(message, green("SUCCESS"))
     }
 
-    fun console() {
+    private fun console() {
         print("\r${preparePrefix()} |> ")
     }
 
