@@ -5,6 +5,7 @@ import me.blueamethyst.bluecloud.runner.AbstractServiceProcess
 import me.blueamethyst.bluecloud.runner.utils.ServiceDisplay
 import java.io.File
 
+// Fix service startup
 class JvmServiceProcess: AbstractServiceProcess() {
 
     lateinit var process: Process; private set
