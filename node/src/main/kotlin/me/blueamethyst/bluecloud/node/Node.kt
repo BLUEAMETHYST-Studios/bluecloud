@@ -47,14 +47,21 @@ class Node: AbstractSystemPart(InternalSystemPartType.NODE) {
             baseDirectory = "."
 
             directory(".") {
-                file("cluster.json")
+                file<ClusterConfigModel>(
+                    name = "cluster.json",
+                    content = {
+                        ClusterConfigModel(
+                            hostname = "127.0.0.1",
+                            port = 33333
+                        )
+                    })
                 file<NodeConfigModel>(
                     name = "node.json",
                     content = {
                         NodeConfigModel(
                             id = "",
                             name = "",
-                            internalWrapperEnabled = false,
+                            internalWrapperEnabled = true,
                             otherNodes = emptyList()
                         )
                     }
