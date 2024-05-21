@@ -6,7 +6,6 @@ import me.blueamethyst.bluecloud.common.internal.types.InternalSystemPartType
 import me.blueamethyst.bluecloud.common.terminal.Logger
 import me.blueamethyst.bluecloud.common.terminal.Terminal
 import me.blueamethyst.bluecloud.common.utils.LoggingUtils
-import me.blueamethyst.bluecloud.node.models.ClusterConfigModel
 import me.blueamethyst.bluecloud.node.models.NodeConfigModel
 import me.blueamethyst.bluecloud.node.utils.json
 import me.blueamethyst.bluecloud.wrapper.Wrapper
@@ -20,7 +19,6 @@ class Node: AbstractSystemPart(InternalSystemPartType.NODE) {
     companion object {
         lateinit var logger: Logger
         lateinit var config: NodeConfigModel
-        lateinit var clusterConfig: ClusterConfigModel
     }
 
     override fun startup() {
@@ -78,9 +76,6 @@ class Node: AbstractSystemPart(InternalSystemPartType.NODE) {
     private fun provideConfigFile() {
         config = json.decodeFromString(
             File("node.json").readText(Charsets.UTF_8)
-        )
-        clusterConfig = json.decodeFromString(
-            File("cluster.json").readText(Charsets.UTF_8)
         )
     }
 
