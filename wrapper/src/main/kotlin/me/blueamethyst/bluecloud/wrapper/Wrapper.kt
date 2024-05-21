@@ -72,11 +72,13 @@ class Wrapper: AbstractSystemPart(InternalSystemPartType.WRAPPER) {
             directory("local") {
                 file<WrapperConfigModel>(
                     name = "wrapper.json",
-                    content = WrapperConfigModel(
-                        maxMemory = promptIntToValid("How much memory should the wrapper use? (MB)"), // TODO: disable prompt when file exists
-                        serviceProcessType = "jvm",
-                        simultaneousServiceStartCount = 2
-                    )
+                    content = {
+                        WrapperConfigModel(
+                            maxMemory = promptIntToValid("How much memory should the wrapper use? (MB)"),
+                            serviceProcessType = "jvm",
+                            simultaneousServiceStartCount = 2
+                        )
+                    }
                 )
             }
         }

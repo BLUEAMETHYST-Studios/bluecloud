@@ -5,6 +5,7 @@ import me.blueamethyst.bluecloud.api.service.ICloudService
 
 @InternalBlueCloudApi
 class WrapperServiceProcessor {
+    private val runningServices = arrayListOf<ICloudService>()
 
     fun startService(service: ICloudService) {
 
@@ -22,6 +23,10 @@ class WrapperServiceProcessor {
         val service = WrapperQueue.instance.queue.first()
         startService(service)
         WrapperQueue.instance.queue.remove(service)
+    }
+
+    fun getRunningServices(): ArrayList<ICloudService> {
+        return runningServices
     }
 
     companion object {

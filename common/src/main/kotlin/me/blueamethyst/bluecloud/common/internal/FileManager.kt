@@ -67,6 +67,22 @@ class FileManager(var baseDirectory: String = "") {
             file.createNewFile()
         }
 
+        inline fun <reified T> file(name: String, content: () -> T, registryName: String = name, excludeFromRegistry: Boolean = false) {
+            val file = File(parentDirectory, name)
+
+            if(!excludeFromRegistry)
+                fileManager.pathRegistry[registryName] = file.path
+
+            if(file.exists())
+                return
+
+            file.parentFile.mkdirs()
+            file.createNewFile()
+
+
+            file.writeText(json.encodeToString<T>(content.invoke()))
+        }
+
         inline fun <reified T> file(name: String, content: T, registryName: String = name, excludeFromRegistry: Boolean = false) {
             val file = File(parentDirectory, name)
 
