@@ -1,4 +1,4 @@
-package me.blueamethyst.bluecloud.common.console
+package me.blueamethyst.bluecloud.common.terminal
 
 object ConsoleColors {
     // Reset

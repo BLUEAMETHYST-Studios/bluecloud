@@ -1,7 +1,7 @@
 import com.github.ajalt.clikt.core.CliktCommand
-import me.blueamethyst.bluecloud.common.console.ConsoleColors
-import me.blueamethyst.bluecloud.common.console.Logger
-import me.blueamethyst.bluecloud.common.console.cli.CLI
+import me.blueamethyst.bluecloud.common.terminal.ConsoleColors
+import me.blueamethyst.bluecloud.common.terminal.Logger
+import me.blueamethyst.bluecloud.common.terminal.cli.CLI
 
 fun main() {
     val cli = CLI(

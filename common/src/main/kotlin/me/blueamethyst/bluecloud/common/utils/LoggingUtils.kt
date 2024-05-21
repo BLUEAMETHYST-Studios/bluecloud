@@ -1,7 +1,7 @@
 package me.blueamethyst.bluecloud.common.utils
 
-import me.blueamethyst.bluecloud.common.console.ConsoleColors
-import me.blueamethyst.bluecloud.common.console.Logger
+import me.blueamethyst.bluecloud.common.terminal.ConsoleColors
+import me.blueamethyst.bluecloud.common.terminal.Logger
 
 object LoggingUtils {
 

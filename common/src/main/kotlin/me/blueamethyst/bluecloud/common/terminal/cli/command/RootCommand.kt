@@ -1,4 +1,4 @@
-package me.blueamethyst.bluecloud.common.console.cli.command
+package me.blueamethyst.bluecloud.common.terminal.cli.command
 
 import com.github.ajalt.clikt.core.CliktCommand
 

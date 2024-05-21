@@ -1,9 +1,9 @@
-package me.blueamethyst.bluecloud.common.console.cli
+package me.blueamethyst.bluecloud.common.terminal.cli
 
 import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.core.subcommands
-import me.blueamethyst.bluecloud.common.console.Logger
-import me.blueamethyst.bluecloud.common.console.cli.command.RootCommand
+import me.blueamethyst.bluecloud.common.terminal.Logger
+import me.blueamethyst.bluecloud.common.terminal.cli.command.RootCommand
 import java.io.Closeable
 
 class CLI(
