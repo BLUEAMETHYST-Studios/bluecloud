@@ -1,7 +1,9 @@
 package me.blueamethyst.bluecloud.wrapper.logic
 
+import me.blueamethyst.bluecloud.api.annontations.InternalBlueCloudApi
 import me.blueamethyst.bluecloud.wrapper.Wrapper
 
+@InternalBlueCloudApi
 class WrapperService(
     javaCommand: String,
     jvmArguments: String,

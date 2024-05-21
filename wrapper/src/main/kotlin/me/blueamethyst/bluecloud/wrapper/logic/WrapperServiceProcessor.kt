@@ -1,7 +1,9 @@
 package me.blueamethyst.bluecloud.wrapper.logic
 
+import me.blueamethyst.bluecloud.api.annontations.InternalBlueCloudApi
 import me.blueamethyst.bluecloud.api.service.ICloudService
 
+@InternalBlueCloudApi
 class WrapperServiceProcessor {
 
     fun startService(service: ICloudService) {

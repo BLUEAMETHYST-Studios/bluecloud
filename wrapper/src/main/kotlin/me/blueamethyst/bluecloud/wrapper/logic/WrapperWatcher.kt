@@ -1,10 +1,12 @@
 package me.blueamethyst.bluecloud.wrapper.logic
 
+import me.blueamethyst.bluecloud.api.annontations.InternalBlueCloudApi
 import me.blueamethyst.bluecloud.wrapper.logic.WrapperQueue as Queue
 import me.blueamethyst.bluecloud.wrapper.logic.WrapperServiceProcessor as ServiceProcessor
 import me.blueamethyst.bluecloud.wrapper.Wrapper.Companion.logger
 import java.io.Closeable
 
+@InternalBlueCloudApi
 class WrapperWatcher: Thread("wrapper-watcher"), Closeable {
     var running = false; private set
 

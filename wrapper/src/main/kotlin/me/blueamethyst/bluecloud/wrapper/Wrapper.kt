@@ -1,5 +1,6 @@
 package me.blueamethyst.bluecloud.wrapper
 
+import me.blueamethyst.bluecloud.api.annontations.InternalBlueCloudApi
 import me.blueamethyst.bluecloud.common.console.ConsoleColors
 import me.blueamethyst.bluecloud.common.console.Logger
 import me.blueamethyst.bluecloud.common.internal.AbstractSystemPart
@@ -20,6 +21,7 @@ class Wrapper: AbstractSystemPart(InternalSystemPartType.WRAPPER) {
         lateinit var logger: Logger
     }
 
+    @InternalBlueCloudApi
     override fun startup() {
         Companion.logger = logger
 
@@ -27,9 +29,11 @@ class Wrapper: AbstractSystemPart(InternalSystemPartType.WRAPPER) {
         postStart()
     }
 
+    @InternalBlueCloudApi
     override fun shutdown() {
     }
 
+    @InternalBlueCloudApi
     private fun initialize() {
         logger.info("Initializing Wrapper...")
         setupFileStructure()
@@ -44,12 +48,14 @@ class Wrapper: AbstractSystemPart(InternalSystemPartType.WRAPPER) {
         logger.success("Wrapper initialized!")
     }
 
+    @InternalBlueCloudApi
     private fun postStart() {
         logger.info("Starting Wrapper...")
         WrapperWatcher.instance.initialize()
         blockMainThread()
     }
 
+    @InternalBlueCloudApi
     private fun setupFileStructure() {
         setupData {
             baseDirectory = "."
@@ -73,7 +79,6 @@ class Wrapper: AbstractSystemPart(InternalSystemPartType.WRAPPER) {
             File("local/wrapper.json").readText(Charsets.UTF_8)
         )
     }
-
     private fun provideProcessType() {
         val serviceProcess = ProcessRegistry.instance.getServiceProcess(config.serviceProcessType)
             ?: throw IllegalStateException("Service process type '${config.serviceProcessType}' is not registered")
