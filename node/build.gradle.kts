@@ -1,3 +1,5 @@
+val ktor_version: String by project
+
 plugins {
     kotlin("jvm") version "1.9.24"
     kotlin("plugin.serialization") version "1.9.24"
@@ -18,6 +20,15 @@ dependencies {
     implementation(libs.mordant)
     implementation(libs.mordantCoroutines)
     implementation(kotlin("reflect"))
+
+    // Ktor
+    implementation("io.ktor:ktor-server-core-jvm:$ktor_version")
+    implementation("io.ktor:ktor-server-websockets-jvm:$ktor_version")
+    implementation("io.ktor:ktor-server-content-negotiation-jvm:$ktor_version")
+    implementation("io.ktor:ktor-serialization-kotlinx-json-jvm:$ktor_version")
+    implementation("io.ktor:ktor-server-call-logging-jvm:$ktor_version")
+    implementation("io.ktor:ktor-server-netty-jvm:$ktor_version")
+    implementation("io.ktor:ktor-server-auth:$ktor_version")
 }
 
 tasks.test {
