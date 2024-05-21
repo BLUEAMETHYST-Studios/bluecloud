@@ -7,7 +7,7 @@ interface ICloudNode {
     fun getName(): String
     fun getId(): UUID
     fun getAddress(): String
-    fun getInternalWrapper(): ICloudWrapper
+    fun getInternalWrapper(): ICloudWrapper?
     fun isHeadNode(): Boolean
     fun isFallbackHeadNode(): Boolean
     fun disconnect()
