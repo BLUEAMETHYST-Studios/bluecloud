@@ -12,6 +12,7 @@ repositories {
 dependencies {
     implementation(project(":api"))
     implementation(project(":common"))
+    implementation(project(":wrapper")) // TODO
     implementation(libs.kotlinxSerializationJson)
     implementation(libs.guice)
     implementation(libs.mordant)

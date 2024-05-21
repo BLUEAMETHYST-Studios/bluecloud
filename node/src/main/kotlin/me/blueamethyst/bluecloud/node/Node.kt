@@ -1,23 +1,30 @@
 package me.blueamethyst.bluecloud.node
 
+import me.blueamethyst.bluecloud.api.annontations.InternalBlueCloudApi
 import me.blueamethyst.bluecloud.common.internal.AbstractSystemPart
 import me.blueamethyst.bluecloud.common.internal.types.InternalSystemPartType
 import me.blueamethyst.bluecloud.common.terminal.Logger
 import me.blueamethyst.bluecloud.common.terminal.Terminal
 import me.blueamethyst.bluecloud.common.utils.LoggingUtils
 import me.blueamethyst.bluecloud.node.models.NodeConfigModel
+import me.blueamethyst.bluecloud.node.utils.json
+import me.blueamethyst.bluecloud.wrapper.Wrapper
+import java.io.File
 
+@InternalBlueCloudApi
 class Node: AbstractSystemPart(InternalSystemPartType.NODE) {
     val terminal = Terminal()
     override val logger = LoggingUtils.getLogger("NODE", terminal.terminal)
 
     companion object {
         lateinit var logger: Logger
+        lateinit var config: NodeConfigModel
     }
 
     override fun startup() {
         Companion.logger = logger
         initialize()
+        postStart()
     }
 
     override fun shutdown() {
@@ -25,10 +32,12 @@ class Node: AbstractSystemPart(InternalSystemPartType.NODE) {
 
     private fun initialize() {
         setupFileStructure()
+        provideConfigFile()
     }
 
     private fun postStart() {
-
+        if (config.internalWrapperEnabled) provideWrapper()
+        blockMainThread()
     }
 
     private fun setupFileStructure() {
@@ -43,6 +52,7 @@ class Node: AbstractSystemPart(InternalSystemPartType.NODE) {
                         NodeConfigModel(
                             id = "",
                             name = "",
+                            internalWrapperEnabled = false,
                             otherNodes = emptyList()
                         )
                     }
@@ -53,6 +63,23 @@ class Node: AbstractSystemPart(InternalSystemPartType.NODE) {
             directory("local") {
                 directory("templates")
             }
+        }
+    }
+
+    private fun provideConfigFile() {
+        config = json.decodeFromString(
+            File("node.json").readText(Charsets.UTF_8)
+        )
+    }
+
+    // TODO
+    private fun provideWrapper() {
+        Wrapper().startup()
+    }
+
+    private fun blockMainThread() {
+        while (true) {
+            Thread.sleep(50000)
         }
     }
 }

@@ -16,7 +16,9 @@ import me.blueamethyst.bluecloud.wrapper.utils.promptIntToValid
 import java.io.File
 import kotlin.reflect.KClass
 
-class Wrapper: AbstractSystemPart(InternalSystemPartType.WRAPPER) {
+class Wrapper(
+    private val blockMainThread: Boolean = false
+): AbstractSystemPart(InternalSystemPartType.WRAPPER) {
 
     val terminal = Terminal()
     override val logger = LoggingUtils.getLogger("WRAPPER", terminal.terminal)
@@ -60,7 +62,7 @@ class Wrapper: AbstractSystemPart(InternalSystemPartType.WRAPPER) {
     private fun postStart() {
         logger.info("Starting Wrapper...")
         WrapperWatcher.instance.initialize()
-        blockMainThread()
+        if (blockMainThread) blockMainThread()
     }
 
     @InternalBlueCloudApi
@@ -89,6 +91,7 @@ class Wrapper: AbstractSystemPart(InternalSystemPartType.WRAPPER) {
             File("local/wrapper.json").readText(Charsets.UTF_8)
         )
     }
+
     private fun provideProcessType() {
         val serviceProcess = ProcessRegistry.instance.getServiceProcess(config.serviceProcessType)
             ?: throw IllegalStateException("Service process type '${config.serviceProcessType}' is not registered")
