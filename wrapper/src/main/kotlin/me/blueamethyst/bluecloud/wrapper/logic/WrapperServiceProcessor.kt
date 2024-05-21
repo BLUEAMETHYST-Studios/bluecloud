@@ -20,8 +20,8 @@ class WrapperServiceProcessor {
     }
 
     fun startNextFromQueue() {
-        val service = WrapperQueue.instance.queue.first()
-        startService(service)
+        val service = WrapperQueue.instance.queue.firstOrNull()
+        startService(service ?: return)
         WrapperQueue.instance.queue.remove(service)
     }
 
