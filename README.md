@@ -26,7 +26,7 @@ If you are searching for a production-ready cloud system, you should take a look
 | **Runner**     | The module that handles process creation.                    | 🚧     |
 | **API**        | A api for developers using dependency injection.             | 🚧     |
 | **Wrapper**    | The wrapper between the node and the runner.                 | 🚧     |
-| **Node**       | The main part of the cloud system.                           | ❌      |
+| **Node**       | The main part of the cloud system.                           | 🚧     |
 | **Templates**  | A template system for services.                              | ❌      |
 | **Sync**       | A synchronisation service for the cloud system. (e.g. Netty) | ❌      |
 | **CLI**        | A command line interface for the cloud system.               | ❌      |
