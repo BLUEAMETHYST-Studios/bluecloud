@@ -4,6 +4,7 @@ guice = "7.0.0"
 ktor = "2.3.11"
 kotlinx-serialization = "1.6.3"
 clikt = "4.4.0"
+mordant = "2.6.0"
 
 [libraries]
 kotlinxCoroutinesCore = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCore" }
@@ -15,6 +16,8 @@ ktor-client-cio = { group = "io.ktor", name = "ktor-client-cio", version.ref = "
 ktor-client-content-negotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktor" }
 ktor-serialization-kotlinx-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
 clikt = { group = "com.github.ajalt.clikt", name = "clikt", version.ref = "clikt" }
+mordant = { group = "com.github.ajalt.mordant", name = "mordant", version.ref = "mordant" }
+mordantCoroutines = { group = "com.github.ajalt.mordant", name = "mordant-coroutines", version.ref = "mordant" }
 
 [bundles]
 ktorClient = ["ktor-client-core", "ktor-client-cio", "ktor-client-content-negotiation", "ktor-serialization-kotlinx-json"]

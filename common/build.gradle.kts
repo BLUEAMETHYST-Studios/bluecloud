@@ -14,6 +14,8 @@ dependencies {
     implementation(libs.bundles.ktorClient)
     implementation(libs.guice)
     implementation(libs.clikt)
+    implementation(libs.mordant)
+    implementation(libs.mordantCoroutines)
     implementation(kotlin("reflect"))
 }
 

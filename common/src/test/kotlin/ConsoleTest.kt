@@ -1,11 +1,10 @@
 import com.github.ajalt.clikt.core.CliktCommand
 import me.blueamethyst.bluecloud.common.console.ConsoleColors
 import me.blueamethyst.bluecloud.common.console.Logger
-import me.blueamethyst.bluecloud.common.console.cli.Terminal
-import java.net.InetAddress
+import me.blueamethyst.bluecloud.common.console.cli.CLI
 
 fun main() {
-    val terminal = Terminal(
+    val cli = CLI(
         Logger("Terminal", true),
         "${ConsoleColors.YELLOW_BRIGHT}CLI${ConsoleColors.BLACK_BRIGHT}@${ConsoleColors.BLUE_BRIGHT}BlueCloud ${ConsoleColors.BLACK_BRIGHT}» ${ConsoleColors.RESET}",
         listOf(
@@ -13,7 +12,7 @@ fun main() {
         )
     )
 
-    terminal.start()
+    cli.start()
 
     while (true) {
         Thread.sleep(1000)

@@ -6,11 +6,11 @@ import me.blueamethyst.bluecloud.common.console.Logger
 import me.blueamethyst.bluecloud.common.console.cli.command.RootCommand
 import java.io.Closeable
 
-class Terminal(
+class CLI(
     private val logger: Logger,
     private val prompt: String,
     val subCommands: List<CliktCommand>
-): Thread(), Closeable {
+): Thread("cli-thread"), Closeable {
 
     var running = false; private set
 
