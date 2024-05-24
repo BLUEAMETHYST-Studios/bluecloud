@@ -18,6 +18,8 @@ import me.blueamethyst.bluecloud.node.utils.generateRandomSecret
 import me.blueamethyst.bluecloud.node.utils.json
 import me.blueamethyst.bluecloud.wrapper.Wrapper
 import java.io.File
+import java.util.*
+import kotlin.system.exitProcess
 
 @InternalBlueCloudApi
 class Node: AbstractSystemPart(InternalSystemPartType.NODE) {
@@ -71,10 +73,10 @@ class Node: AbstractSystemPart(InternalSystemPartType.NODE) {
                     name = "node.json",
                     content = {
                         NodeConfigModel(
-                            id = "",
-                            name = "",
+                            id = UUID.randomUUID().toString(),
+                            name = terminal.terminal.prompt("What is the name of this node?", "Node-1", true) ?: exitProcess(-1),
                             internalWrapperEnabled = true,
-                            otherNodes = emptyList()
+                            otherNodes = terminal.terminal.prompt("What are the other nodes in the cluster? (seperate with ;)")?.split(";")?.map { it.trim() } ?: emptyList()
                         )
                     }
                 )
