@@ -7,7 +7,7 @@ import com.github.ajalt.clikt.parameters.arguments.argument
 import com.github.ajalt.clikt.parameters.options.flag
 import com.github.ajalt.clikt.parameters.options.option
 
-class TemplateCommand: NoOpCliktCommand(name = "templates", help = "Manage Templates") {
+class TemplatesCommand: NoOpCliktCommand(name = "templates", help = "Manage Templates") {
 
     init {
         subcommands(Create(), Delete(), Pull(), List(), Info())
