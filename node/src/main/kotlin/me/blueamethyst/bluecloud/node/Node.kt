@@ -3,8 +3,10 @@ package me.blueamethyst.bluecloud.node
 import me.blueamethyst.bluecloud.api.annontations.InternalBlueCloudApi
 import me.blueamethyst.bluecloud.common.internal.AbstractSystemPart
 import me.blueamethyst.bluecloud.common.internal.types.InternalSystemPartType
+import me.blueamethyst.bluecloud.common.terminal.ConsoleColors
 import me.blueamethyst.bluecloud.common.terminal.Logger
 import me.blueamethyst.bluecloud.common.terminal.Terminal
+import me.blueamethyst.bluecloud.common.terminal.cli.CLI
 import me.blueamethyst.bluecloud.common.utils.LoggingUtils
 import me.blueamethyst.bluecloud.node.injector.BlueCloudApiImpl
 import me.blueamethyst.bluecloud.node.models.ClusterConfigModel
@@ -25,6 +27,7 @@ class Node: AbstractSystemPart(InternalSystemPartType.NODE) {
         lateinit var logger: Logger
         lateinit var config: NodeConfigModel
         lateinit var cluster: ClusterConfigModel
+        lateinit var cli: CLI
         internal lateinit var secrets: SecretsModel
     }
 
@@ -45,7 +48,8 @@ class Node: AbstractSystemPart(InternalSystemPartType.NODE) {
 
     private fun postStart() {
         if (config.internalWrapperEnabled) provideWrapper()
-        provideKtorServer()
+        // TODO: provideKtorServer()
+        provideCli()
         blockMainThread()
     }
 
@@ -107,6 +111,15 @@ class Node: AbstractSystemPart(InternalSystemPartType.NODE) {
 
     private fun provideInjector() {
         BlueCloudApiImpl()
+    }
+
+    private fun provideCli() {
+        cli = CLI(
+            logger,
+            "${ConsoleColors.YELLOW_BRIGHT}CLI${ConsoleColors.BLACK_BRIGHT}@${ConsoleColors.BLUE_BRIGHT}BlueCloud ${ConsoleColors.BLACK_BRIGHT}» ${ConsoleColors.RESET}",
+            listOf()
+        )
+        cli.start()
     }
 
     private fun blockMainThread() {
