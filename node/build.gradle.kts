@@ -19,6 +19,7 @@ dependencies {
     implementation(libs.guice)
     implementation(libs.mordant)
     implementation(libs.mordantCoroutines)
+    implementation(libs.clikt)
     implementation(kotlin("reflect"))
 
     // Ktor

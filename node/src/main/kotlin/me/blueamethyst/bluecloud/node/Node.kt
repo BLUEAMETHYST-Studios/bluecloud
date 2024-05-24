@@ -8,6 +8,7 @@ import me.blueamethyst.bluecloud.common.terminal.Logger
 import me.blueamethyst.bluecloud.common.terminal.Terminal
 import me.blueamethyst.bluecloud.common.terminal.cli.CLI
 import me.blueamethyst.bluecloud.common.utils.LoggingUtils
+import me.blueamethyst.bluecloud.node.commands.TemplateCommand
 import me.blueamethyst.bluecloud.node.injector.BlueCloudApiImpl
 import me.blueamethyst.bluecloud.node.models.ClusterConfigModel
 import me.blueamethyst.bluecloud.node.models.NodeConfigModel
@@ -117,7 +118,7 @@ class Node: AbstractSystemPart(InternalSystemPartType.NODE) {
         cli = CLI(
             logger,
             "${ConsoleColors.YELLOW_BRIGHT}CLI${ConsoleColors.BLACK_BRIGHT}@${ConsoleColors.BLUE_BRIGHT}BlueCloud ${ConsoleColors.BLACK_BRIGHT}» ${ConsoleColors.RESET}",
-            listOf()
+            listOf(TemplateCommand())
         )
         cli.start()
     }
