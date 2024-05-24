@@ -2,7 +2,10 @@ package me.blueamethyst.bluecloud.runner.impl.screen
 
 import me.blueamethyst.bluecloud.api.service.ICloudService
 import me.blueamethyst.bluecloud.runner.AbstractServiceProcess
+import me.blueamethyst.bluecloud.runner.annontations.OnlyOS
+import me.blueamethyst.bluecloud.runner.types.OperatingSystem
 
+@OnlyOS(OperatingSystem.LINUX)
 class UnixScreenServiceProcess: AbstractServiceProcess() {
     lateinit var unixScreen: UnixScreen; private set
     lateinit var process: Process; private set

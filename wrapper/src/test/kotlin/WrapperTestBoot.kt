@@ -7,7 +7,7 @@ import me.blueamethyst.bluecloud.wrapper.Wrapper
 @InternalBlueCloudApi
 fun main() {
     ApiImpl()
-    Wrapper().startup()
+    Wrapper(blockMainThread = true).startup()
 }
 
 class ApiImpl: BlueCloudApi() {

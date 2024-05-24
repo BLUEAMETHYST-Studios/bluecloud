@@ -4,5 +4,11 @@ enum class OperatingSystem {
     WINDOWS,
     LINUX,
     MACOS,
-    UNKNOWN
+    UNKNOWN;
+
+    companion object {
+        val current = System.getProperty("os.name").lowercase().let { osName ->
+            entries.singleOrNull { osName.startsWith(it.toString().lowercase()) } ?: UNKNOWN
+        }
+    }
 }

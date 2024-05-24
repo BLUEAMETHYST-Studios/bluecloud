@@ -9,12 +9,16 @@ import me.blueamethyst.bluecloud.common.terminal.Terminal
 import me.blueamethyst.bluecloud.common.utils.LoggingUtils
 import me.blueamethyst.bluecloud.runner.AbstractServiceProcess
 import me.blueamethyst.bluecloud.runner.ProcessRegistry
+import me.blueamethyst.bluecloud.runner.annontations.OnlyOS
+import me.blueamethyst.bluecloud.runner.types.OperatingSystem
 import me.blueamethyst.bluecloud.wrapper.logic.WrapperWatcher
 import me.blueamethyst.bluecloud.wrapper.models.WrapperConfigModel
 import me.blueamethyst.bluecloud.wrapper.utils.json
 import me.blueamethyst.bluecloud.wrapper.utils.promptIntToValid
 import java.io.File
 import kotlin.reflect.KClass
+import kotlin.reflect.full.findAnnotation
+import kotlin.system.exitProcess
 
 class Wrapper(
     private val blockMainThread: Boolean = false
@@ -51,7 +55,8 @@ class Wrapper(
         kotlin.runCatching {
             provideProcessType()
         }.onFailure {
-            logger.error(it.stackTraceToString())
+            logger.error(it.message ?: it.stackTraceToString())
+            exitProcess(-9)
         }.onSuccess {
             logger.success("Found process type '${config.serviceProcessType}': ${ConsoleColors.YELLOW_BRIGHT}${processType.qualifiedName}")
         }
@@ -96,6 +101,10 @@ class Wrapper(
         val serviceProcess = ProcessRegistry.instance.getServiceProcess(config.serviceProcessType)
             ?: throw IllegalStateException("Service process type '${config.serviceProcessType}' is not registered")
 
+        val annotation = serviceProcess.findAnnotation<OnlyOS>()
+        if (annotation != null && annotation.os != OperatingSystem.current) {
+            throw IllegalStateException("Service process type '${config.serviceProcessType}' is not supported on this OS")
+        }
         processType = serviceProcess
     }
 
