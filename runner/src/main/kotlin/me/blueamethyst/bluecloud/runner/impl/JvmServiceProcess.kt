@@ -2,6 +2,7 @@ package me.blueamethyst.bluecloud.runner.impl
 
 import me.blueamethyst.bluecloud.api.service.ICloudService
 import me.blueamethyst.bluecloud.runner.AbstractServiceProcess
+import me.blueamethyst.bluecloud.runner.exception.PlatformFileNotExistsException
 import me.blueamethyst.bluecloud.runner.utils.ServiceDisplay
 import java.io.File
 
@@ -29,7 +30,12 @@ class JvmServiceProcess: AbstractServiceProcess() {
         startCommand = command
         directory = File("temp/${service.getId()}")
 
-        directory.mkdirs()
+        if (!directory.parentFile.exists()) directory.mkdirs()
+        if (!File(directory, "platform.jar").exists()) {
+            kill()
+            throw PlatformFileNotExistsException()
+        }
+
         createProcess()
     }
 
