@@ -17,6 +17,7 @@ import me.blueamethyst.bluecloud.node.server.KtorApplication
 import me.blueamethyst.bluecloud.node.utils.asciiArt
 import me.blueamethyst.bluecloud.node.utils.generateRandomSecret
 import me.blueamethyst.bluecloud.node.utils.json
+import me.blueamethyst.bluecloud.node.utils.printInformationTable
 import me.blueamethyst.bluecloud.wrapper.Wrapper
 import java.io.File
 import java.util.*
@@ -24,10 +25,10 @@ import kotlin.system.exitProcess
 
 @InternalBlueCloudApi
 class Node: AbstractSystemPart(InternalSystemPartType.NODE) {
-    val terminal = Terminal()
     override val logger = LoggingUtils.getLogger("NODE", terminal.terminal)
 
     companion object {
+        val terminal = Terminal()
         lateinit var logger: Logger
         lateinit var config: NodeConfigModel
         lateinit var cluster: ClusterConfigModel
@@ -46,6 +47,7 @@ class Node: AbstractSystemPart(InternalSystemPartType.NODE) {
 
     private fun initialize() {
         println(asciiArt())
+        printInformationTable()
         provideInjector()
         setupFileStructure()
         provideConfigFile()
