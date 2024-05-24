@@ -6,6 +6,6 @@ import me.blueamethyst.bluecloud.api.template.ICloudLocalTemplateStorage
 class InjectionTemplateModule: AbstractModule() {
 
     override fun configure() {
-        bind(ICloudLocalTemplateStorage::class.java).to(CloudLocalTemplateStorageImpl::class.java)
+        bind(ICloudLocalTemplateStorage::class.java).toInstance(CloudLocalTemplateStorageImpl.instance)
     }
 }

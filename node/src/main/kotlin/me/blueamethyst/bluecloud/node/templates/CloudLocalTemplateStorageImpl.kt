@@ -43,4 +43,8 @@ class CloudLocalTemplateStorageImpl: ICloudLocalTemplateStorage {
             val instance = Cache()
         }
     }
+
+    companion object {
+        val instance: ICloudLocalTemplateStorage = CloudLocalTemplateStorageImpl()
+    }
 }
