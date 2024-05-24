@@ -1,4 +1,4 @@
-package me.blueamethyst.bluecloud.runner.jvm
+package me.blueamethyst.bluecloud.runner.impl
 
 import me.blueamethyst.bluecloud.api.service.ICloudService
 import me.blueamethyst.bluecloud.runner.AbstractServiceProcess
@@ -10,7 +10,7 @@ class JvmServiceProcess: AbstractServiceProcess() {
 
     lateinit var process: Process; private set
     lateinit var directory: File; private set
-    lateinit var startCommand: String; private set
+    lateinit var startCommand: MutableList<String>; private set
 
     /*
     override fun start(
@@ -25,7 +25,7 @@ class JvmServiceProcess: AbstractServiceProcess() {
     }
      */
 
-    override fun start(service: ICloudService, command: String) {
+    override fun start(service: ICloudService, command: MutableList<String>) {
         startCommand = command
         createProcess()
     }

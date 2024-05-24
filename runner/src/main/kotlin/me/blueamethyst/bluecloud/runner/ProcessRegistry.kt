@@ -1,11 +1,12 @@
 package me.blueamethyst.bluecloud.runner
 
-import me.blueamethyst.bluecloud.runner.jvm.JvmServiceProcess
+import me.blueamethyst.bluecloud.runner.impl.JvmServiceProcess
 import kotlin.reflect.KClass
 
 class ProcessRegistry {
     private val processes = mutableMapOf<String, KClass<out AbstractServiceProcess>>(
-        "jvm" to JvmServiceProcess::class
+        "jvm" to JvmServiceProcess::class,
+        "screen" to JvmServiceProcess::class
     )
 
     fun registerServiceProcess(name: String, process: KClass<out AbstractServiceProcess>) {

@@ -6,7 +6,7 @@ abstract class AbstractServiceProcess {
 
     abstract fun start(
         service: ICloudService,
-        command: String
+        command: MutableList<String>
     )
 
     abstract fun stop()
