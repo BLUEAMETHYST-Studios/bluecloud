@@ -27,6 +27,9 @@ class JvmServiceProcess: AbstractServiceProcess() {
 
     override fun start(service: ICloudService, command: MutableList<String>) {
         startCommand = command
+        directory = File("temp/${service.getId()}")
+
+        directory.mkdirs()
         createProcess()
     }
 
@@ -40,6 +43,7 @@ class JvmServiceProcess: AbstractServiceProcess() {
 
     private fun createProcess() {
         process = ProcessBuilder(startCommand)
+            .directory(directory)
             .start()
     }
 
