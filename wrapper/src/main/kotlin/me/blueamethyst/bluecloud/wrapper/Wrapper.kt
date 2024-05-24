@@ -81,9 +81,12 @@ class Wrapper(
                     name = "wrapper.json",
                     content = {
                         WrapperConfigModel(
-                            maxMemory = promptIntToValid("How much memory should the wrapper use? (MB)"),
-                            serviceProcessType = "jvm",
-                            simultaneousServiceStartCount = 2
+                            maxMemory = promptIntToValid("How much memory should the wrapper use? (MB)", default = 2),
+                            serviceProcessType = terminal.terminal.prompt("What service process type should the wrapper use?", "jvm", true, true, choices = ProcessRegistry.instance.getServiceProcesses().keys.toList().filter {
+                                val annotation = ProcessRegistry.instance.getServiceProcess(it)?.findAnnotation<OnlyOS>()
+                                annotation == null || annotation.os == OperatingSystem.current
+                            }) ?: "jvm",
+                            simultaneousServiceStartCount = promptIntToValid("How many services should be started simultaneously? (default: 2)", default = 2),
                         )
                     }
                 )
