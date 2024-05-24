@@ -37,14 +37,16 @@ If you are searching for a production-ready cloud system, you should take a look
 | **Kubernetes** | A Kubernetes wrapper for cloud services.                     | ❌      |
 
 ### 📦 Modules
-| Module             | Description                                                                    | Status |
-|--------------------|--------------------------------------------------------------------------------|--------|
-| **Rest-API**       | A rest api for the cloud system.                                               | ❌      |
-| **Proxy-Module**   | A module consisting of an maintenance, motd and tablist system.                | ❌      |
-| **NPCs**           | An NPC system that gives players the opportunity to connect to other servers.  | ❌      |
-| **Signs**          | An Sign system that gives players the opportunity to connect to other servers. | ❌      |
-| **Ingame-Notify**  | A ingame notification system (e.g. when a cloud service starts).               | ❌      |
-| **Webhook-Notify** | A webhook for notifications (e.g. when a cloud service starts).                | ❌      |
+| Module                   | Description                                                                    | Status |
+|--------------------------|--------------------------------------------------------------------------------|--------|
+| **Rest-API**             | A rest api for the cloud system.                                               | ❌      |
+| **Proxy-Module**         | A module consisting of an maintenance, motd and tablist system.                | ❌      |
+| **NPCs**                 | An NPC system that gives players the opportunity to connect to other servers.  | ❌      |
+| **Signs**                | An Sign system that gives players the opportunity to connect to other servers. | ❌      |
+| **Ingame-Notify**        | A ingame notification system (e.g. when a cloud service starts).               | ❌      |
+| **Webhook-Notify**       | A webhook for notifications (e.g. when a cloud service starts).                | ❌      |
+| **GeyserMC-Integration** | An integration for [GeyserMC Standalone](https://geysermc.org/) as a module.   | ❌      |
+| **Scaling**              | An autoscaling solution for BlueCloud.                                         | ❌      |
 
 ### 📱 Platforms
 > [!NOTE]  
