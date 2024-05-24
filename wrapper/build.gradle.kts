@@ -3,8 +3,6 @@ plugins {
     kotlin("plugin.serialization") version "1.9.24"
 }
 
-group = "me.blueamethyst.bluecloud"
-
 repositories {
     mavenCentral()
 }

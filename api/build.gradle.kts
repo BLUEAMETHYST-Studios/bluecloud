@@ -4,8 +4,6 @@ plugins {
     `maven-publish`
 }
 
-group = "me.blueamethyst.bluecloud"
-
 repositories {
     mavenCentral()
 }
