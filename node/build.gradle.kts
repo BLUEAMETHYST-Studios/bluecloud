@@ -3,6 +3,7 @@ val ktor_version: String by project
 plugins {
     kotlin("jvm") version "1.9.24"
     kotlin("plugin.serialization") version "1.9.24"
+    id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 group = "me.blueamethyst.bluecloud"
@@ -34,4 +35,15 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+tasks.shadowJar {
+    archiveFileName = "node.jar"
+    manifest {
+        attributes(
+            mapOf(
+                "Main-Class" to "me.blueamethyst.bluecloud.node.BootKt",
+            )
+        )
+    }
 }
