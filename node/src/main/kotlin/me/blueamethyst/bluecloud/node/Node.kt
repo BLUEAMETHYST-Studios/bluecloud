@@ -1,5 +1,10 @@
 package me.blueamethyst.bluecloud.node
 
+import com.github.ajalt.colormath.model.Oklab
+import com.github.ajalt.colormath.model.SRGB
+import com.github.ajalt.colormath.transform.interpolator
+import com.github.ajalt.colormath.transform.sequence
+import com.github.ajalt.mordant.rendering.TextColors
 import me.blueamethyst.bluecloud.api.annontations.InternalBlueCloudApi
 import me.blueamethyst.bluecloud.common.internal.AbstractSystemPart
 import me.blueamethyst.bluecloud.common.internal.types.InternalSystemPartType
@@ -14,6 +19,7 @@ import me.blueamethyst.bluecloud.node.models.ClusterConfigModel
 import me.blueamethyst.bluecloud.node.models.NodeConfigModel
 import me.blueamethyst.bluecloud.node.models.SecretsModel
 import me.blueamethyst.bluecloud.node.server.KtorApplication
+import me.blueamethyst.bluecloud.node.utils.asciiArt
 import me.blueamethyst.bluecloud.node.utils.generateRandomSecret
 import me.blueamethyst.bluecloud.node.utils.json
 import me.blueamethyst.bluecloud.wrapper.Wrapper
@@ -44,6 +50,7 @@ class Node: AbstractSystemPart(InternalSystemPartType.NODE) {
     }
 
     private fun initialize() {
+        println(asciiArt())
         provideInjector()
         setupFileStructure()
         provideConfigFile()
