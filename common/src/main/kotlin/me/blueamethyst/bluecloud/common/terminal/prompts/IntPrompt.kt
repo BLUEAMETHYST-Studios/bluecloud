@@ -11,7 +11,6 @@ class IntPrompt(
     private val uppercaseDefault: Boolean = true,
     showChoices: Boolean = true,
     choices: Collection<Int> = emptySet(),
-    private val choiceStrings: List<String> = listOf("y", "n"),
     promptSuffix: String = ": ",
     invalidChoiceMessage: String = "Invalid value, choose from ",
 ) : Prompt<Int>(
