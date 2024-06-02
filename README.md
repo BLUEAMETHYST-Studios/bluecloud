@@ -64,7 +64,7 @@ Currently, you have to compile it yourself.
 ```shell
 git clone https://github.com/BLUEAMETHYST-Studios/bluecloud.git
 cd bluecloud
-gradlew build
+./gradlew build
 ```
 
 ## 😎 Develop with BlueCloud
