@@ -9,3 +9,11 @@ include("api")
 include("common")
 include("wrapper")
 include("node")
+
+val commonModulesExclude = listOf("build", "src")
+
+File("common/").listFiles()
+    ?.filter { !commonModulesExclude.contains(it.name) && !it.isFile}
+    ?.forEach {
+        include(":${it.path.replace("/", ":")}")
+    }

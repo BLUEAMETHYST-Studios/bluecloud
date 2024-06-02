@@ -10,6 +10,7 @@ repositories {
 dependencies {
     implementation(project(":api"))
     implementation(project(":common"))
+    implementation(project(":common:cli"))
     implementation(project(":runner"))
     implementation(libs.kotlinxSerializationJson)
     implementation(libs.guice)
