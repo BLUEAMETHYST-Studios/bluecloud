@@ -9,8 +9,11 @@ repositories {
 
 dependencies {
     implementation(project(":api"))
+    implementation(project(":common:cli"))
+    implementation(project(":common:platforms"))
     implementation(libs.bundles.ktorClient)
     implementation(libs.guice)
+    implementation(libs.mordant)
 }
 
 tasks.test {
