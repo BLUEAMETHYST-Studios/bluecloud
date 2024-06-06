@@ -2,24 +2,25 @@ package me.blueamethyst.bluecloud.wrapper.logic
 
 import me.blueamethyst.bluecloud.api.annontations.InternalBlueCloudApi
 import me.blueamethyst.bluecloud.api.service.ICloudService
+import me.blueamethyst.bluecloud.wrapper.logic.abstraction.AbstractWrapperQueue
 
 @InternalBlueCloudApi
-class WrapperQueue {
+class WrapperQueue: AbstractWrapperQueue() {
     internal val queue = arrayListOf<ICloudService>()
 
-    fun getQueue(): ArrayList<ICloudService> {
+    override fun getQueue(): ArrayList<ICloudService> {
         return queue
     }
 
-    fun addServiceToQueue(service: ICloudService) {
+    override fun addServiceToQueue(service: ICloudService) {
         queue.addLast(service)
     }
 
-    fun removeServiceFromQueue(service: ICloudService) {
+    override fun removeServiceFromQueue(service: ICloudService) {
         queue.remove(service)
     }
 
-    fun clearQueue() {
+    override fun clearQueue() {
         queue.clear()
     }
 
