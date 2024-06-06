@@ -10,10 +10,12 @@ include("common")
 include("wrapper")
 include("node")
 
-val commonModulesExclude = listOf("build", "src")
+namespace("common")
 
-File("common/").listFiles()
-    ?.filter { !commonModulesExclude.contains(it.name) && !it.isFile}
-    ?.forEach {
-        include(":${it.path.replace("/", ":")}")
-    }
+fun namespace(name: String, exclude: List<String> = listOf("build", "src")) {
+    File("$name/").listFiles()
+        ?.filter { !exclude.contains(it.name) && !it.isFile}
+        ?.forEach {
+            include(":${it.path.replace("/", ":")}")
+        }
+}
