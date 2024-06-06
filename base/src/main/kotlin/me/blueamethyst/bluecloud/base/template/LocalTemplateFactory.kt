@@ -18,9 +18,7 @@ class LocalTemplateFactory: ICloudLocalTemplateStorage {
     }
 
     override fun getTemplateNamespace(name: String): ICloudTemplateNamespace? {
-        return namespaces.firstOrNull {
-            it.getName() == name
-        }
+        return namespaces.firstOrNull { it.getName() == name }
     }
 
     override fun pullTemplate(): Boolean {
