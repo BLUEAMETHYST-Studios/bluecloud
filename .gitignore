@@ -28,3 +28,4 @@ build
 ### Other ###
 run/
 .kotlin/
+.DS_Store
