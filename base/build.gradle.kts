@@ -13,7 +13,9 @@ dependencies {
     implementation(project(":api"))
     implementation(project(":common"))
     implementation(project(":common:cli"))
+    implementation(project(":common:platforms"))
     implementation(libs.mordant)
     implementation(libs.guice)
     implementation(libs.kotlinxSerializationJson)
+    implementation(libs.bundles.ktorClient)
 }

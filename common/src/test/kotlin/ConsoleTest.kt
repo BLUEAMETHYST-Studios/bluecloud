@@ -1,4 +1,4 @@
-import com.github.ajalt.clikt.core.CliktCommand
+/* import com.github.ajalt.clikt.core.CliktCommand
 import me.blueamethyst.bluecloud.common.terminal.ConsoleColors
 import me.blueamethyst.bluecloud.common.terminal.Logger
 import me.blueamethyst.bluecloud.common.terminal.Terminal
@@ -26,4 +26,4 @@ class MySubcommand: CliktCommand(name = "subcommand") {
     override fun run() {
         println("Hello from subcommand!")
     }
-}
+}*/

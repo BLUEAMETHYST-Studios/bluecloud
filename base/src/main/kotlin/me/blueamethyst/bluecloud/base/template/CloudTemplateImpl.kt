@@ -7,7 +7,7 @@ import me.blueamethyst.bluecloud.api.template.ICloudTemplateNamespace
 @Serializable
 class CloudTemplateImpl(
     private val name: String,
-    private val parentNamespace: String?,
+    private val parentNamespace: String,
     private val properties: HashMap<String, String>
 ): ICloudTemplate {
 
@@ -15,8 +15,8 @@ class CloudTemplateImpl(
         return name
     }
 
-    override fun getParentNamespace(): ICloudTemplateNamespace? {
-        TODO("Not yet implemented")
+    override fun getParentNamespace(): ICloudTemplateNamespace {
+        return CloudTemplateNamespaceImpl(parentNamespace, listOf(this)) //TODO: implement right way
     }
 
     override fun getProperties(): HashMap<String, String> {

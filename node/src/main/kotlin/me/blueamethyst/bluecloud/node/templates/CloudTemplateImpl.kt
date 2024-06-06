@@ -14,7 +14,7 @@ class CloudTemplateImpl(
         return name
     }
 
-    override fun getParentNamespace(): ICloudTemplateNamespace? {
+    override fun getParentNamespace(): ICloudTemplateNamespace {
         TODO("Not yet implemented")
     }
 
