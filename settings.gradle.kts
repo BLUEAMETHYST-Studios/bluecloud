@@ -6,13 +6,14 @@ rootProject.name = "bluecloud"
 
 include("runner")
 include("api")
-include("common")
+namespace("common")
 include("wrapper")
 include("node")
+include("base")
 
-namespace("common")
 
-fun namespace(name: String, exclude: List<String> = listOf("build", "src")) {
+fun namespace(name: String, exclude: List<String> = listOf("build", "src"), include: Boolean = true) {
+    if (include) include(name)
     File("$name/").listFiles()
         ?.filter { !exclude.contains(it.name) && !it.isFile}
         ?.forEach {
