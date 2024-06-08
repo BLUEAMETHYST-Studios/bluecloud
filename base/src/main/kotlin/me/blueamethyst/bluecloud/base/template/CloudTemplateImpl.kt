@@ -16,7 +16,7 @@ class CloudTemplateImpl(
     }
 
     override fun getParentNamespace(): ICloudTemplateNamespace {
-        return CloudTemplateNamespaceImpl(parentNamespace, listOf(this)) //TODO: implement right way
+        TODO("Not yet implemented")
     }
 
     override fun getProperties(): HashMap<String, String> {

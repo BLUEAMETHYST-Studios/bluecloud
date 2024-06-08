@@ -1,6 +1,5 @@
 import me.blueamethyst.bluecloud.base.BlueCloudBase
 import me.blueamethyst.bluecloud.base.template.CloudTemplateImpl
-import me.blueamethyst.bluecloud.base.template.LocalTemplateDeploy
 import me.blueamethyst.bluecloud.base.template.platform.PlatformDeployer
 import me.blueamethyst.bluecloud.common.platforms.annontations.Platform
 import me.blueamethyst.bluecloud.common.platforms.impl.server.PaperMCPlatform
