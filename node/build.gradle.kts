@@ -1,9 +1,13 @@
+import BlueCloudDependencies.applyDependencies
+import BlueCloudDependencies.blueCloud
+
 val ktor_version: String by project
 
 plugins {
     alias(libs.plugins.jvm)
     alias(libs.plugins.serialization)
     alias(libs.plugins.shadow)
+    BlueCloudDependencies
 }
 
 repositories {
@@ -15,12 +19,12 @@ dependencies {
     implementation(project(":common"))
     implementation(project(":common:cli"))
     implementation(project(":wrapper")) // TODO
-    implementation(libs.kotlinxSerializationJson)
-    implementation(libs.guice)
-    implementation(libs.mordant)
-    implementation(libs.mordantCoroutines)
-    implementation(libs.clikt)
-    implementation(kotlin("reflect"))
+    blueCloud(implementation(libs.kotlinxSerializationJson))
+    blueCloud(implementation(libs.guice))
+    blueCloud(implementation(libs.mordant))
+    blueCloud(implementation(libs.mordantCoroutines))
+    blueCloud(implementation(libs.clikt))
+    blueCloud(implementation(kotlin("reflect")))
 
     // Ktor
     implementation("io.ktor:ktor-server-core-jvm:$ktor_version")
@@ -30,6 +34,8 @@ dependencies {
     implementation("io.ktor:ktor-server-call-logging-jvm:$ktor_version")
     implementation("io.ktor:ktor-server-netty-jvm:$ktor_version")
     implementation("io.ktor:ktor-server-auth:$ktor_version")
+
+    applyDependencies()
 }
 
 tasks.test {
