@@ -5,6 +5,7 @@ plugins {
 
 repositories {
     mavenCentral()
+    maven("https://s01.oss.sonatype.org/content/repositories/snapshots/")
 }
 
 dependencies {
@@ -14,6 +15,7 @@ dependencies {
     implementation(libs.bundles.ktorClient)
     implementation(libs.guice)
     implementation(libs.mordant)
+    implementation(libs.bundles.osgan)
 }
 
 tasks.test {

@@ -8,6 +8,7 @@ clikt = "4.4.0"
 mordant = "2.6.0"
 kotlin = "2.0.0"
 shadow = "8.1.1"
+osgan = "1.2.9-SNAPSHOT"
 
 [libraries]
 kotlinxCoroutinesCore = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCore" }
@@ -22,6 +23,7 @@ ktor-serialization-kotlinx-json = { group = "io.ktor", name = "ktor-serializatio
 clikt = { group = "com.github.ajalt.clikt", name = "clikt", version.ref = "clikt" }
 mordant = { group = "com.github.ajalt.mordant", name = "mordant", version.ref = "mordant" }
 mordantCoroutines = { group = "com.github.ajalt.mordant", name = "mordant-coroutines", version.ref = "mordant" }
+osgan-files = { group = "dev.httpmarco", name = "osgan-files", version.ref = "osgan" }
 
 [plugins]
 jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
@@ -30,3 +32,4 @@ serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref 
 
 [bundles]
 ktorClient = ["ktor-client-core", "ktor-client-cio", "ktor-client-content-negotiation", "ktor-serialization-kotlinx-json"]
+osgan = ["osgan-files"]
