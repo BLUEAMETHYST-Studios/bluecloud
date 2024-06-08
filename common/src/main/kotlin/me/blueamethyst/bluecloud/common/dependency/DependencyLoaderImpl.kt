@@ -35,4 +35,8 @@ class DependencyLoaderImpl: IDependencyLoader {
 
         OsganFile(file.toPath(), OsganFileCreateOption.CREATION).download(url)
     }
+
+    companion object {
+        val instance = DependencyLoaderImpl()
+    }
 }
