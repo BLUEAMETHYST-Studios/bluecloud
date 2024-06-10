@@ -8,7 +8,7 @@ clikt = "4.4.0"
 mordant = "2.6.0"
 kotlin = "2.0.0"
 shadow = "8.1.1"
-osgan = "1.2.9-SNAPSHOT"
+osgan = "1.2.12-SNAPSHOT"
 
 [libraries]
 kotlinxCoroutinesCore = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCore" }
